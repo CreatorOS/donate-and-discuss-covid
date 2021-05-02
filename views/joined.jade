@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  center
+    h1 Donate and Discuss with @#{quest.handle}
+    img(src=quest.profilePicture style="height: 100px; width: 100px; border-radius: 50px")
+    br 
+    h2 Thank you for the donation!
+    p We will send you instructions for a one-on-one discussion shortly!
+    br
+    br
+    a(href="/create") Create your own donation request button

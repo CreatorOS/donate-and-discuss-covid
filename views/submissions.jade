@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  center
+    h1 Submissions to your requests
+    br 
+    br
+    each submission in submissions
+      div
+        h3 #{submission.email}
+        img(style="width: 100%" src="/uploads/"+submission.submission)
+        hr

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  center 
+    h1 #{query}
+    - each quest in quests 
+      a(href="/join/"+quest.questId)
+        div(style="margin-top: 12px; padding: 24px; border-radius: 4px; background-color: #eee; color: #1a1a1a; flex-direction: row; text-align: left; display: flex")
+          img(src=quest.profilePicture style="width: 50px; height: 50px; border-radius: 25px; margin-right: 12px")
+          div 
+            b @#{quest.handle}
+            p= quest.title
+

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  center
+    h1 Donate and Discuss with #[a(href="/user/"+quest.handle) #{quest.handle}]
+    img(src=quest.profilePicture style="height: 100px; width: 100px; border-radius: 50px")
+    br 
+    h3 #{quest.title}
+    br
+    br 
+    if(handle)
+      form(action="/join/"+quest.questId method="post" encType="multipart/form-data")
+        input(name="submission" type="file")
+        br
+        input(type="submit" value="Submit Donation Screenshot" style="margin-top: 12px; background-color: hsl(253, 56%, 43%);" class="mui-btn mui-btn--primary")
+        if(handle == quest.handle)
+          p #[a(href="/submissions") See all submissions] (Visible only to you)
+    else 
+      div(style="padding: 24px")
+        p(style="margin: 12px") To upload a donation screenshot, you must sign in
+        button(onclick="window.location.href='/oauth-any/twitter/login?state='+window.location.href" class="mui-btn mui-btn--primary") Login with Twitter
+        br
+        button(onclick="window.location.href='/oauth-any/google/login?state='+window.location.href" class="mui-btn" style="color: #fff; background: #C2313E") Login with Google
+        p #{handle} #{quest.handle}
+    p(style="margin-top:24px") #{quest.handle} will look at the donation and send you instructions for a one-on-one discussion
+    br
+    div
+      h2 Minimum Donation
+      p(style="white-space: pre-line; text-align: left; max-width: 300px; padding: 32px; background-color: rgba(0,0,0,0.05); border-radius: 2px")!= quest.resources 
+      br
+      br
+     

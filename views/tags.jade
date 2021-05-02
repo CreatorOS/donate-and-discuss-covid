@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  center 
+    h3 Donate for a COVID cause and set up a time with distinguished individuals
+    div(style="margin-top: 32px; margin-bottom: 50px")
+      form( action="/search" method="get")
+        input(name="query" placeholder="Search for individuals")
+        input(type="submit", value="Search")
+      center 
+        br
+        a(href="/create") #[b [Become a Donate & Discuss mentor]]
+    div(style="margin-top: 15px")
+    - each user in userList
+      a(href="/user/"+user.user)
+        img(src=user.profilePicture style="height: 50px; width: 50px; border-radius: 25px; margin-right: 12px; margin-top: 12px") 
+    br
+    br

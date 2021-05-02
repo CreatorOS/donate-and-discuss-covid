@@ -1,0 +1,31 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(/stars.png);
+  background-size: auto;
+  color: rgb(32, 30, 30);
+}
+
+.container {
+  max-width: 500px;
+  width: calc(100% - 100px);
+  margin: auto;
+  padding-top: 12px;
+  margin-top: 32px;
+  border-radius: 2px;
+}
+
+.header {
+  flex-direction: row;
+  padding: 16px;
+  align-items: flex-end;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: hsl(253, 56%, 43%);;
+}

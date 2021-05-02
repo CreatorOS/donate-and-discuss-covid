@@ -1,0 +1,2 @@
+visit letsencrypt.org
+copy the fullchain.pem and privkey.pem here
