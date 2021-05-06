@@ -62,6 +62,27 @@ router.post('/create', assignHandle, async function(req, res) {
   res.redirect(`/join/${questId}`);
 });
 
+router.get('/edit/quests/:questId', assignHandle, async function(req, res) {
+  const { questId } = req.params;
+  const quest = await QuestModel.findOne({ questId }).exec();
+  if(!quest) res.redirect("/")
+  quest.resources = linkifyHtml(quest.resources);
+  res.render('edit', { quest, handle: req.handle });
+});
+
+router.post('/edit/quests/:questId', assignHandle, async function(req, res) {
+  const { title, resources } = req.body;
+  const { questId } = req.params;
+  const handle = req.handle.toLowerCase()
+
+  let questUpdateObj = {
+    title,
+    resources,
+  }
+  await QuestModel.findOneAndUpdate({questId, handle}, {$set: questUpdateObj});
+  res.redirect(`/join/${questId}`);
+});
+
 router.get('/join/:questId', assignHandle, async function(req, res){
   const { questId } = req.params;
   const quest = await QuestModel.findOne({ questId }).exec();

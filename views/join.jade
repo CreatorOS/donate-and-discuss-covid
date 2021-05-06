@@ -15,6 +15,7 @@ block content
         input(type="submit" value="Submit Donation Screenshot" style="margin-top: 12px; background-color: hsl(253, 56%, 43%);" class="mui-btn mui-btn--primary")
         if(handle == quest.handle)
           p #[a(href="/submissions") See all submissions] (Visible only to you)
+          p #[a(href="/edit/quests/"+quest.questId) Edit] (Visible only to you)
     else 
       div(style="padding: 24px")
         p(style="margin: 12px") To upload a donation screenshot, you must sign in
