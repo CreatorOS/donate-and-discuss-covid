@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1(class="heading") List yourself as a Donate & Discuss mentor
+  b To encourage people to make a donation for a COVID cause, give your time to mentor them when they donate
+  br
+  br
+  if(handle)
+    form(method="post", action="/edit/quests/"+quest.questId)
+      p What are you willing to offer when someone makes a donation?
+      input( name="title" style="width: 100%" value=quest.title)
+      br
+      br
+      p What is the minimum amount they should donate to be eligible to get your time?
+      input(name="resources", rows="10" style="width: 100%" value=quest.resources)
+      br
+      br
+      input(type="submit" value="Update")
+  else 
+    div(style="padding: 24px")
+      p(style="margin: 12px") To enlist yourself here, you must sign in
+      button(onclick="window.location.href='/oauth-any/twitter/login?state='+window.location.href" class="mui-btn mui-btn--primary") Login with Twitter
+      br
+      button(onclick="window.location.href='/oauth-any/google/login?state='+window.location.href" class="mui-btn" style="color: #fff; background: #C2313E") Login with Google
