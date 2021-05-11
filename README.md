@@ -1,5 +1,5 @@
 # Donate and Discuss
-As seen on [covid.questboo.app](http://covid.questbook.app)
+As seen on [covid.questbook.app](http://covid.questbook.app)
 
 ## Pre-requisites
 - NodeJS & NPM ([Install Node & NPM](https://www.npmjs.com/get-npm)])
